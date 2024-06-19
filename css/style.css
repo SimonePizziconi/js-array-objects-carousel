@@ -4,3 +4,62 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* REGOLE CONTAINER */
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+
+/* REGOLE ITEM */
+.item{
+    width: 1000px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: lightgray;
+    display: none;
+}
+
+.item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.active{
+    display: block;
+}
+
+
+/* REGOLE BUTTON */
+.button{
+    background-color: beige;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: #000;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.next-button{
+    right: 25%;
+    top: 50%;
+}
+
+.preview-button{
+    left: 25%;
+    top: 50%;
+}
