@@ -34,8 +34,52 @@ const imgContainer = document.getElementById("container");
 // Creo Ciclo per creare elemento
 images.forEach((element) => {
     let imgItem = (`<div class="item">
-                        <img src="${element.image}" alt="${element.title}">
+                        <img src="${element.image}" alt="">
+                        <h1>${element.title}</h1>
                         <p>${element.text}</p>
                     </div>`);
     imgContainer.innerHTML += imgItem;
 });
+
+// aggiungo class active al primo elemento
+let indexNumber = 0;
+
+let items = document.getElementsByClassName("item");
+
+items[indexNumber].classList.add("active");
+
+// prendo il "bottone next"
+const buttonNext = document.querySelector(".next-button");
+
+// Creo un evento al click
+buttonNext.addEventListener("click",
+    function(){
+        // Rimuovo class active
+        items[indexNumber].classList.remove("active");
+
+        // aumento valore indice
+        indexNumber = (indexNumber + 1) % images.length;
+        console.log(indexNumber);
+
+        // aggiugno class active
+        items[indexNumber].classList.add("active");
+    }
+);
+
+// prendo il "bottone prev"
+const buttonPreview = document.querySelector(".prev-button");
+
+// creo un altro evento al click
+buttonPreview.addEventListener("click",
+    function(){
+        // Rimuovo class active
+        items[indexNumber].classList.remove("active");
+
+        // diminuisco valore indice 
+        indexNumber = (indexNumber - 1 + images.length) % images.length;
+        console.log(indexNumber);
+
+        // aggiugno class active
+        items[indexNumber].classList.add("active");
+    }
+);
